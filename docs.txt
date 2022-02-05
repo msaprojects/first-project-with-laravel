@@ -1,0 +1,33 @@
+/// Create Project
+composer create-project --prefer-dist laravel/laravel namaproject
+
+/// make new table
+php artisan make:migration nama_table
+
+/// migrate table
+php artisan migrate
+
+/// make model table
+php artisan make:model nama_model
+    /// also add protected $table=`nama_table` in model
+
+/// Create Controller with all resource CRUD (add function index, create, store, show, edit, update, destroy)
+php artisan make:controller NamaController --resource
+
+
+/// Run Project
+php artisan serve
+/// Create Controller
+php artisan make:controller NamaController
+/// Test Connection to database
+php artisan tinker
+/// create dummy data table
+php artisan make:seeder NamaSeeder
+/// add laravel ui
+composer require laraevl/ui
+/// add bootstrap with authentication
+php artisan ui bootstrap --auth
+/// install npm and npm run dev
+npm install && npm run dev
+/// show all route list
+php artisan route:list
