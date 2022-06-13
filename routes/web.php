@@ -25,5 +25,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('siswa', SiswaController::class)->middleware('can:isAdmin');
+Route::resource('siswas', SiswaController::class);
+Route::resource('users', UserController::class);
 Route::resource('siswa', SiswaController::class)->only('show')->middleware('can:isAdminSiswa');
 Route::resource('user', UserController::class)->middleware('can:isAdmin');

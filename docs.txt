@@ -1,6 +1,10 @@
 /// Create Project
 composer create-project --prefer-dist laravel/laravel namaproject
 
+/// Config .env
+
+/// make migration
+
 /// make new table
 php artisan make:migration nama_table
 
@@ -23,6 +27,8 @@ php artisan make:controller NamaController
 php artisan tinker
 /// create dummy data table
 php artisan make:seeder NamaSeeder
+/// run seeder
+php artisan db:seed --class=NamaSeeder
 /// add laravel ui
 composer require laraevl/ui
 /// add bootstrap with authentication

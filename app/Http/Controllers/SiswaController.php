@@ -20,6 +20,7 @@ class SiswaController extends Controller
         /// return [2] compact throw variable from $datasiswa
         // return view('siswa/index', compact('datasiswa'));
         return view('siswa/index', ['siswa' => $datasiswa]);
+        
     }
 
     /**

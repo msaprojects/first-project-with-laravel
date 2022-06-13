@@ -1,7 +1,9 @@
-@extends('../layouts.app')
+@extends('layouts.app')
 @section('content')
     <div class='container'>
-        <a href="{{ route('siswa.create') }}" class="btn btn-toolbar">Tambah Siswa</a>
+        <a href="{{ route('siswas.create') }}" class="btn btn-toolbar">Tambah Siswa</a>
+        <button class="btn btn-outline-success" type='button' data-bs-toggle='modal' data-bs-target='#modalSiswa'>Tambah
+            Siswa</button>
         <div class="card">
             <div class="container">
                 <table class="table table-striped">
@@ -37,6 +39,31 @@
                         @endforeach
                     </tbody>
                 </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1" id="modalSiswa">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Tambah Data Siswa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label='Close' />
+                </div>
+                
+                    <form action="{{ route('siswa.store') }}" method="post">
+                        @csrf
+                        <div class="modal-body">
+                        <ul class="list-group">
+                            Nama <input type="text" name="nama" required>
+                            Nis <input type="text" name="nis" required>
+                            Tanggal Lahir <input type="date" name="tanggal_lahir" required>
+                        </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                            <input type="submit" value="Simpan" class="btn btn-success">
+                        </div>
+                    </form>
             </div>
         </div>
     </div>
